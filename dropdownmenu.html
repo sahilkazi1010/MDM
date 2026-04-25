@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dropdown Menu</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+
+        .box
+        {
+            width: 400px;
+            background-color: white;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        select
+        {
+            width: 200px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #result
+        {
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Dropdown Menu using JavaScript</h2>
+
+        <select id="course" onchange="showCourse()">
+
+            <option value="">Select Course</option>
+
+            <option value="Python">
+                Python
+            </option>
+
+            <option value="Java">
+                Java
+            </option>
+
+            <option value="Web Development">
+                Web Development
+            </option>
+
+            <option value="Data Structures">
+                Data Structures
+            </option>
+
+        </select>
+
+        <div id="result">
+
+            Selected course will appear here
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showCourse()
+        {
+            var course =
+            document.getElementById("course").value;
+
+            document.getElementById("result").innerHTML =
+            "You selected: " + course;
+        }
+
+    </script>
+
+</body>
+</html>
