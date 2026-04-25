@@ -1,0 +1,10 @@
+git init
+git add github.txt
+git commit -m "First commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git push -u origin main
+cd ..
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+cd YOUR_REPOSITORY
+type github.txt
