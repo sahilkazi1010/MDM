@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AJAX Example</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .box
+        {
+            width: 80%;
+            background-color: white;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td
+        {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th
+        {
+            background-color: lightblue;
+        }
+
+        button
+        {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>AJAX Fetch Data</h2>
+
+        <button onclick="getData()">
+            Fetch Data
+        </button>
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Total</th>
+                <th>Remark</th>
+            </tr>
+
+            <tbody id="result">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+
+        function getData()
+        {
+            $.ajax(
+            {
+                url:
+                "http://172.16.5.154:4000/api/getAll/harshawar",
+
+                type: "GET",
+
+                success: function(data)
+                {
+                    var output = "";
+
+                    for(var i = 0; i < data.length; i++)
+                    {
+                        output +=
+                        "<tr>" +
+
+                        "<td>" + data[i].Name + "</td>" +
+
+                        "<td>" + data[i].Title + "</td>" +
+
+                        "<td>" + data[i].Total + "</td>" +
+
+                        "<td>" + data[i].Remark + "</td>" +
+
+                        "</tr>";
+                    }
+
+                    document.getElementById("result")
+                    .innerHTML = output;
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
