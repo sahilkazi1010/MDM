@@ -1,0 +1,89 @@
+1. Install XAMPP
+
+2. Open XAMPP Control Panel
+
+3. Start:
+   - Apache
+   - MySQL
+
+4. Open browser:
+   http://localhost/phpmyadmin
+
+5. Create Database:
+   studentdb
+
+6. Create Table:
+   student
+
+7. Add Columns:
+
+   id      INT      PRIMARY KEY   AUTO_INCREMENT
+   name    VARCHAR(50)
+   marks   INT
+
+8. Go to:
+   C:\xampp\htdocs
+
+9. Create Folder:
+   student
+
+10. Open folder in VS Code
+
+11. Create file:
+    insert.php
+
+12. Paste this code:
+
+<?php
+
+$conn = mysqli_connect(
+"localhost",
+"root",
+"",
+"studentdb"
+);
+
+if(!$conn)
+{
+    die("Connection Failed");
+}
+
+$sql =
+"INSERT INTO student(name,marks)
+VALUES('Sahil',89)";
+
+if(mysqli_query($conn,$sql))
+{
+    echo "Data Inserted Successfully";
+}
+else
+{
+    echo "Error";
+}
+
+mysqli_close($conn);
+
+?>
+
+13. Save file
+
+14. Open browser and run:
+
+http://localhost/student/insert.php
+
+15. Output:
+
+Data Inserted Successfully
+
+16. Check inserted data:
+
+Open:
+http://localhost/phpmyadmin
+
+Go to:
+studentdb → student
+
+You will see:
+
+id   name    marks
+1    Sahil   89
