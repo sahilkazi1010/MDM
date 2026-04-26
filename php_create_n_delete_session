@@ -1,0 +1,57 @@
+1. Install XAMPP
+
+2. Open XAMPP Control Panel
+
+3. Start:
+   - Apache
+   - MySQL
+
+4. Go to:
+   C:\xampp\htdocs
+
+5. Create folder:
+   phpprac
+
+6. Inside phpprac create another folder:
+   session
+
+Folder structure:
+
+htdocs
+ └── phpprac
+      └── session
+
+7. Open phpprac folder in VS Code
+
+8. Inside session folder create file:
+   session.php
+
+9. Paste this code:
+
+<?php
+
+session_start();
+
+$_SESSION["name"] = "Sahil";
+
+echo "Session Created<br>";
+
+echo "Session Value: " . $_SESSION["name"];
+
+session_destroy();
+
+echo "<br>Session Deleted";
+
+?>
+
+10. Save file
+
+11. Open browser and run:
+
+http://localhost/phpprac/session/session.php
+
+12. Output:
+
+Session Created
+Session Value: Sahil
+Session Deleted
