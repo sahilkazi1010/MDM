@@ -1,0 +1,77 @@
+1. Open VS Code
+
+2. Open Terminal
+
+3. Create React Application:
+
+npx create-react-app reacthooks
+
+4. Open Project:
+
+cd reacthooks
+
+5. Start React Application:
+
+npm start
+
+6. Browser opens:
+   http://localhost:3000
+
+7. Open:
+   reacthooks → src → App.js
+
+8. Delete old code and paste this code:
+
+import React, { useState, useEffect } from "react";
+
+function App() {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+
+    document.title = `Count ${count}`;
+
+  });
+
+  return (
+
+    <div style={{
+      textAlign: "center",
+      marginTop: "50px"
+    }}>
+
+      <h1>React Hooks Example</h1>
+
+      <h2>Count: {count}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+
+    </div>
+
+  );
+}
+
+export default App;
+
+9. Save file:
+   Ctrl + S
+
+10. Output:
+
+React Hooks Example
+Count: 0
+[Increment Button]
+
+11. Click Increment button
+
+12. Count increases:
+    1
+    2
+    3 ...
+
+13. Hooks Used:
+    useState → manages state
+    useEffect → updates browser title
